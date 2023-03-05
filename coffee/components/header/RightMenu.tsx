@@ -13,14 +13,14 @@ type RightMenuPropsType = {
 }
 const RightMenu = ({right, setRight}:RightMenuPropsType) => {
     return (
-        <div className={`absolute  ${right ? 'right-0' : '-right-[400px]'} duration-1000 top-0 bg-zinc-900 p-14 text-center w-[400px] h-full z-10`}>
+        <div className={`fixed  ${right ? 'right-0' : '-right-[400px]'} duration-1000 top-0 bottom-0 bg-zinc-900 p-14 text-center w-[400px] h-full z-20`}>
             <BsXLg className="hover:text-red-600 duration-200 cursor-pointer" onClick={()=> setRight(!right)} />
             <div className="flex flex-col justify-start items-center gap-10 mt-10">
                 <Image className="w-36" src={logo} width={500} height={200} alt='logo'/>
                 <h1 className="text-gray-200 leading-7">بال‌دار هوا، بالا، نهنگ‌های دانه‌ای به‌قدری خالی است که چنین است. ماهی می آورد نور مبارک، میان نور مجموعه و ما حکم می کنیم گفت فرمانروایی</h1>
                 <div>
-                    <p className="hover:text-green-500 duration-200 cursor-pointer">yooosef.khedri@gmail.com</p>
-                    <p className="hover:text-green-500 duration-200 cursor-pointer">0920-141-7212</p>
+                    <p className="hover:text-green-500 duration-200 cursor-pointer">parisa@gmail.com</p>
+                    <p className="hover:text-green-500 duration-200 cursor-pointer">0920-141-1111</p>
                 </div>
                 <div className="flex justify-center gap-3">
                     <BsInstagram className="cursor-pointer hover:text-orange-700 duration-200" />

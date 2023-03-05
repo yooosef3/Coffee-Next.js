@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import { BsXLg } from "react-icons/bs";
 import { CgMenuRight } from "react-icons/cg";
@@ -21,59 +21,74 @@ const Header = () => {
     const [left, setLeft] = useState(false);
     const [openSearch, setOpenSearch] = useState(false);
     const [searched, setSearched] = useState('');
+    const [navbar, setNavbar] = useState(false);
+    
+    const changeBackground = () => {
+        if (window.scrollY >= 150) {
+          setNavbar(true)
+        } else {
+          setNavbar(false)
+        }
+      }
+      
+      useEffect(() => {
+        changeBackground()
+        window.addEventListener("scroll", changeBackground)
+      })
+      
     return (
         <header>
-        <div className="p-5 lg:p-10 flex flex-col md:flex-row-reverse md:justify-between gap-4">
-            <div className="flex justify-between md:justify-end border-b md:border-b-0 md:gap-4 border-gray-600 pb-4 md:w-[60%] lg:w-[55%] 2xl:w-[52%]">
-                {
-                    openSearch ? 
-                    <BsXLg onClick={() => setOpenSearch(false)} className='cursor-pointer text-2xl hover:text-red-600 duration-200'/>
-                    :
-                    <RiSearch2Line onClick={() => setOpenSearch(true)} className="cursor-pointer text-2xl hover:text-green-400 duration-200"/>
-                }
-                <Link href='/' className="cursor-pointer md:order-first md:ml-auto">
-                    <Image alt="logo" className=" w-28 " src={coffee} height={300} width={400}/>
-                </Link>
-                <div>
+         <div className= {`p-5 md:p-10 fixed w-full z-20 duration-200 ${navbar ? 'bg-black bg-opacity-80' : 'bg-transparent'}`}>
+            <div className="flex flex-col md:flex-row-reverse md:items-center md:justify-between gap-4">
+                <div className="flex pb-4 md:pb-0 justify-between md:justify-end border-b md:border-b-0 md:gap-4 border-gray-600  md:w-[60%] lg:w-[55%] 2xl:w-[52%]">
+                    {
+                        openSearch ? 
+                        <BsXLg onClick={() => setOpenSearch(false)} className='cursor-pointer text-2xl hover:text-red-600 duration-200'/>
+                        :
+                        <RiSearch2Line onClick={() => setOpenSearch(true)} className="cursor-pointer text-2xl hover:text-green-400 duration-200"/>
+                    }
+                    <Link href='/' className="cursor-pointer md:order-first md:ml-auto">
+                        <Image alt="logo" className=" w-28 " src={coffee} height={300} width={400}/>
+                    </Link>
                     <TfiMenu className="cursor-pointer text-2xl xl:hidden hover:text-green-400 duration-200" onClick={()=> setLeft(!left)}/>
-                    <LeftMenu left={left} setLeft={setLeft}/>
                 </div>
-            </div>
-            <div className="flex justify-between items-center md:justify-start md:w-[10%] md:gap-4">
-                <div>
+                <div className="flex justify-between items-center md:justify-start md:w-[20%] md:gap-4">
                     <CgMenuRight onClick={() => setRight(!right)} className="cursor-pointer text-2xl hover:text-green-400 duration-200"/>
-                    <RightMenu right={right} setRight={setRight}/>
-                </div>
-                <div>
-                    <div className="relative" onClick={() => setToggle(!toggle)}>
-                        <FiShoppingCart className="cursor-pointer text-2xl hover:text-green-400 duration-200"/>
-                        <span className="absolute font-extrabold text-green-600 -top-3 -right-2">0</span>
+                    <div>
+                        <div className="relative" onClick={() => setToggle(!toggle)}>
+                            <FiShoppingCart className="cursor-pointer text-2xl hover:text-green-400 duration-200"/>
+                            <span className="absolute font-extrabold text-green-600 -top-3 -right-2">0</span>
+                        </div>
+                        <MenuCart toggle={toggle}/>
                     </div>
-                    <MenuCart toggle={toggle}/>
+                    <div>
+                        <HiUser onClick={()=> setOpen(!open)} className="cursor-pointer text-2xl hover:text-green-400 duration-200"/>
+                        <ul className={`absolute ${open ? 'flex flex-col' : 'hidden'} left-0 md:left-auto  p-4 gap-2 bg-white rounded-lg `}>
+                            <li>
+                                <Link href='/' className='text-gray-400 hover:text-green-500 font-bold duration-200'>ورود</Link>
+                            </li>
+                            <li>
+                                <Link href='/' className='text-gray-400 hover:text-green-500 font-bold duration-200'>ثبت نام</Link>
+                            </li>
+                        </ul>
+                    </div> 
                 </div>
-                <div>
-                    <HiUser onClick={()=> setOpen(!open)} className="cursor-pointer text-2xl hover:text-green-400 duration-200"/>
-                    <ul className={`absolute ${open ? 'flex flex-col' : 'hidden'} left-0 md:left-auto  p-4 gap-2 bg-white rounded-lg `}>
-                        <li>
-                            <Link href='/' className='text-gray-400 hover:text-green-500 font-bold duration-200'>ورود</Link>
-                        </li>
-                        <li>
-                            <Link href='/' className='text-gray-400 hover:text-green-500 font-bold duration-200'>ثبت نام</Link>
-                        </li>
-                    </ul>
-                </div> 
             </div>
+            <Menu navbar={navbar} />
+            {
+                openSearch && 
+                <div className={`absolute w-[90%] lg:w-[30%] top-[130px] ${navbar ? 'lg:top-[120px]' : 'lg:top-[150px]'} right-6 lg:left-6 lg:right-auto shadow-lg`}>
+                    <div className='relative'>
+                    <input placeholder='جستجوی محصول' className='w-full h-full text-lg outline-none p-2 rounded-md border bg-white border-gray-200 focus:border-blue-500' type="text" value={searched} onChange={(e) => setSearched(e.target.value)}/>
+                    <Link href='/'>
+                        <RiSearch2Line className='absolute left-2 top-[14px] text-lg hover:text-green-500 duration-200 cursor-pointer text-gray-600'/>
+                    </Link>
+                    </div>
+                </div>
+            }
         </div>
-        <Menu />
-        {
-            openSearch && 
-            <div className='relative w-[90%] mx-auto md:w-[300px] md:mr-auto md:ml-14'>
-                <input placeholder='جستجوی محصول' className='w-full h-full text-lg outline-none p-2 rounded-md border  border-gray-500 focus:border-blue-500' type="text" value={searched} onChange={(e) => setSearched(e.target.value)}/>
-                <Link href='/'>
-                    <RiSearch2Line className='absolute left-2 top-[14px] text-lg hover:text-green-500 duration-200 cursor-pointer'/>
-                </Link>
-            </div>
-        }
+        <LeftMenu left={left} setLeft={setLeft}/>
+        <RightMenu right={right} setRight={setRight}/>
         </header>
     );
 };

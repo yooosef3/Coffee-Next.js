@@ -26,7 +26,7 @@ const LeftMenu = ({left, setLeft}:LeftMenuPropsTypes) => {
         pages: false,
     });
     return (
-        <div className={`absolute  ${left ? 'left-0' : '-left-[300px]'} duration-1000 top-0 bottom-0 bg-zinc-900 w-[300px] h-[full] overflow-y-auto z-10`}>
+        <div className={`fixed  ${left ? 'left-0' : '-left-[300px]'} duration-1000 top-0 bottom-0 bg-zinc-900 w-[300px] overflow-y-auto z-30`}>
             <BsXLg className="hover:text-red-600 duration-200 cursor-pointer m-5" onClick={()=> setLeft(!left)}/>
             <ul>
                 <li className="border-b border-gray-500 p-5">
