@@ -5,12 +5,13 @@ import Link from 'next/link';
 import React from 'react';
 
 export type ProductPropsType = {
-    percent: Number,
-    off:Number,
+    percent?: Number,
+    off?:Number,
     name: String,
     price: Number,
     image:any ,
-    hover?: any
+    hover?: any,
+    separate?: boolean
 }
 const Product = ({percent, off, image, name, price}:ProductPropsType) => {
     return (

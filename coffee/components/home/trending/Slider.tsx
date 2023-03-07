@@ -22,7 +22,7 @@ import coffee77 from '../../../public/images/3-min_0b3892fe-5995-4152-b2e4-8fbf8
 import coffee8 from '../../../public/images/12-min_510X510_crop_center.webp';
 import coffee88 from '../../../public/images/8-min_b82d3683-3973-4400-a66e-446f7bb06898_510X510_crop_center.webp';
 
-const products = [
+export const products = [
     {id:1, price: 2400, off: 2100, percent: -12 ,name: 'کافه 1', image: coffee4, hoveredImage: coffee44 },
     {id:2, price: 2400, off: 2100, percent: -12 ,name: 'کافه 2', image: coffee2, hoveredImage: coffee22 },
     {id:3, price: 2400, off: 2100, percent: -12 ,name: 'کافه 4', image: coffee1, hoveredImage: coffee11 },
@@ -61,12 +61,11 @@ const Slider = () => {
                     delay: 4000,
                 }} 
                 navigation={true}
-                spaceBetween={10}
                 modules={[ Autoplay,Navigation]} 
-                className="SliderTrending w-[90%] xl:w-[80%] my-16">
+                className="SliderTrending w-[90%]  my-16">
                     {
                     products.map(product => (
-                        <SwiperSlide key={product.id} className='relative group bg-white shadow-md rounded-lg overflow-hidden'>
+                        <SwiperSlide key={product.id} className='relative group bg-white shadow-md hover:shadow-lg rounded-lg'>
                             <Product 
                                 image={product.image}
                                 hover={product.hoveredImage}

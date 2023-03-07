@@ -34,7 +34,7 @@ const logos = [
 const Footer = () => {
     const [drop, setDrop] = useState('');
     return (
-        <footer style={{backgroundImage: `url(${bg.src})`}} className='bg-center relative bg-cover bg-no-repeat h-[100vh] lg:h-[75vh]'>
+        <footer style={{backgroundImage: `url(${bg.src})`}} className='bg-center relative bg-cover bg-no-repeat h-[110vh] lg:h-[75vh]'>
             <Image src={cup} width={200} height={170} alt='cup' className='absolute xl:w-64 xl:top-[-120px] z-10 hidden xl:block'/>
             <div className="absolute inset-0 bg-black opacity-80 pt-14 lg:py-14">
                 <div className="md:w-[800px] lg:w-[90%] xl:w-[80%] mx-auto">
