@@ -14,7 +14,7 @@ import coffee4 from '../../../public/images/Screenshot 2023-02-24 213407.png'
 import coffee5 from '../../../public/images/Screenshot 2023-02-23 222213.png'
 import coffee6 from '../../../public/images/Washed-Fancy-1.jpg'
 
-const beans = [
+export const beans = [
     {id:1, name: 'دانه های کنیایی', text: 'دانه های قهوه کنیایی به طرز عجیبی مورد علاقه و لذت مصرف کنندگان قهوه در سراسر جهان است.', image: coffee4 },
     {id:2, name: 'دانه برشته عربی', text: 'عربیکا از ارتفاعات جنوب غربی اتیوپی سرچشمه می گیرد و محبوب ترین نوع قهوه در سراسر جهان است.', image: coffee2 },
     {id:3, name: 'دانه های robusta', text: 'دانه های موسوم به روبوستا به طور قابل توجهی کافئین بیشتری نسبت به دانه های موسوم به عربیکا دارند.', image: coffee3 },

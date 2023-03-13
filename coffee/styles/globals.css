@@ -8,28 +8,36 @@
   }
 
   .beansSlider .swiper-button-next,
+  .detail .swiper-button-next,
   .beansSlider .swiper-button-prev,
+  .detail .swiper-button-prev,
   .SliderTrending .swiper-button-next,
   .SliderTrending .swiper-button-prev {
     @apply h-8 w-8 rounded-full bg-opacity-40 bg-slate-900 border-gray-600 duration-200;
   }
 
   .beansSlider .swiper-button-next:hover,
+  .detail .swiper-button-next:hover,
   .beansSlider .swiper-button-prev:hover,
+  .detail .swiper-button-prev:hover,
   .SliderTrending .swiper-button-next:hover,
   .SliderTrending .swiper-button-prev:hover {
     @apply bg-[#53A16E];
   }
 
   .beansSlider .swiper-button-next::after,
+  .detail .swiper-button-next::after,
   .beansSlider .swiper-button-prev::after,
+  .detail .swiper-button-prev::after,
   .SliderTrending .swiper-button-next::after,
   .SliderTrending .swiper-button-prev::after {
     @apply text-lg text-white font-bold;
   }
 
   .beansSlider .swiper-button-next:hover::after,
+  .detail .swiper-button-next:hover::after,
   .beansSlider .swiper-button-prev:hover::after,
+  .detail .swiper-button-prev:hover::after,
   .SliderTrending .swiper-button-next:hover::after,
   .SliderTrending .swiper-button-prev:hover::after {
     @apply text-lg text-white;

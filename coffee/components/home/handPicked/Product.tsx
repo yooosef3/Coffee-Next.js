@@ -5,10 +5,10 @@ import Link from 'next/link';
 import React from 'react';
 
 export type ProductPropsType = {
-    percent?: Number,
-    off?:Number,
-    name: String,
-    price: Number,
+    percent?: number,
+    off?:number,
+    name: string,
+    price: number,
     image:any ,
     hover?: any,
     separate?: boolean

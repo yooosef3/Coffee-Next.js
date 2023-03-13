@@ -24,7 +24,7 @@ const list = [
     {id:4,type: 'usefull' ,title: 'لینک های مفید', links:[{id:1, name:'درباره ما'}, {id:2, name:'تماس با ما'}, {id:3, name:'FAQ'}, {id:4, name:'قوانین پرداخت'}, {id:5, name:'سیاست حفظ حریم خصوصی'}, {id:6, name:'سیاست خرید'}, {id:7, name:'نقشه'}]}
 ]
 
-const logos = [
+export const logos = [
     {id:1, image: logo1},
     {id:2, image: logo2},
     {id:3, image: logo3},

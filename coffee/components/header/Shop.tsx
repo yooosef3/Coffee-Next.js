@@ -11,7 +11,7 @@ const Shop = () => {
             </div>
             <ul className="bg-white p-4 absolute hidden group-hover:flex group-hover:flex-col gap-4 rounded-lg">
                 <li>
-                    <Link href='/' className="text-gray-400 font-bold hover:text-green-500 duration-200">لیست محصولات</Link>
+                    <Link href='/products' className="text-gray-400 font-bold hover:text-green-500 duration-200">لیست محصولات</Link>
                 </li>
                 <li>
                     <Link href='/' className="text-gray-400 font-bold hover:text-green-500 duration-200">سبد خرید</Link>

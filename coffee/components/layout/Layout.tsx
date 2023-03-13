@@ -1,14 +1,15 @@
 import Footer from './Footer';
 import Header from './Header';
 import React from 'react';
+import background from "../../public/images/Pattern.webp";
 
 const Layout = ({children}:any) => {
     return (
-        <>
-         <Header />
-         {children}
-         <Footer /> 
-        </>
+        <div className='bg-no-repeat bg-cover' style={{backgroundImage: `url(${background.src})`}}>
+            <Header />
+            {children}
+            <Footer /> 
+        </div>
     );
 };
 

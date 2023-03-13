@@ -105,7 +105,7 @@ const LeftMenu = ({left, setLeft}:LeftMenuPropsTypes) => {
                     </section>
                 </li>
                 <li className="border-b border-gray-500 p-5">
-                    <Link href='/' className="font-bold text-xl text-gray-500 hover:text-green-500 duration-200">دانه های قهوه</Link>
+                    <Link href='/beans' className="font-bold text-xl text-gray-500 hover:text-green-500 duration-200">دانه های قهوه</Link>
                 </li>
                 <li className="border-b border-gray-500 p-5">
                     <Link href='/' className="font-bold text-xl text-gray-500 hover:text-green-500 duration-200">بلاگ</Link>

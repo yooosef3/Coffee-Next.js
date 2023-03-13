@@ -1,21 +1,18 @@
 import { FiSearch } from "react-icons/fi";
+import HeaderTemplate from "@/components/shared/HeaderTemplate";
 import Product from '@/components/home/trending/Product';
 import RatedProduct from '@/components/products/RatedProduct';
 import React from 'react';
-import bg from '../../public/images/top-view-coffee-accessories-table.jpg'
 import mainBg from '../../public/images/Pattern.webp'
 import { products } from '@/components/home/trending/Slider';
 
 const index = () => {
     return (
         <div>
-            <div style={{backgroundImage: `url(${bg.src})`}} className='bg-cover bg-center h-[50vh] md:h-[60vh] relative'>
-                <div className='absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center'>
-                    <h1 className='text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold '>
-                    محصولات
-                    </h1>
-                </div>
-            </div>
+            <HeaderTemplate 
+                background='/images/top-view-coffee-accessories-table.jpg' 
+                header='محصولات'
+                />
             <div style={{backgroundImage: `url(${mainBg.src})`}} className='bg-cover py-20 lg:px-10 bg-no-repeat bg-center'>
                 <div className="lg:w-[95%] mx-auto flex flex-col lg:flex-row lg:justify-center">
                     <div className='w-[90%] lg:w-[75%] mx-auto'>
